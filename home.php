@@ -38,7 +38,7 @@
             echo "<a href='edit.php?Id=$res_id'>Change Profile</a>";
             ?>
             
-        
+            
 
         </div>
     </div>
