@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fbeefb; /* Light pink background for the entire page */
+    color: #333;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    padding: 20px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+.box {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px; /* Larger border-radius for a softer look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 0 12px 30px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 450px;
+    position: relative;
+    animation: float 6s ease-in-out infinite; /* Floating animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.form-box header {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f2f2f2;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.form-box form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-box form .input input {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 12px; /* Rounded corners for input fields */
+    border: 1px solid #d1d1d1;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-box form .input input:focus {
+    border-color: #ff1493; /* Pink color when input is focused */
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+}
+
+.btn {
+    height: 45px;
+    background: linear-gradient(135deg, #ff66b2, #ff1493); /* Pink gradient */
+    border: none;
+    border-radius: 12px; /* Rounded corners for buttons */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    padding: 0 25px;
+    animation: buttonPulse 2s infinite; /* Pulse animation */
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #e55e8f, #d2336a); /* Darker pink on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit {
+    width: 100%;
+}
+
+.links {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.links a {
+    color: #ff1493; /* Pink color for links */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #e55e8f;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 60px;
+    padding: 0 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff1493; /* Pink color for the logo */
+}
+
+.logo a {
+    text-decoration: none;
+    color: #ff1493;
+}
+
+.right-links a {
+    padding: 0 20px;
+    color: #ff1493; /* Pink color for nav links */
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.right-links a:hover {
+    color: #e55e8f; /* Darker pink on hover */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.main-box .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bottom {
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 840px) {
+    .main-box .top {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .top .box {
+        margin: 10px 0;
+    }
+
+    .bottom {
+        margin-top: 30px;
+    }
+}
+
+.message {
+    text-align: center;
+    background: #ffeef0; /* Light pink background for messages */
+    padding: 25px;
+    border: 1px solid #ff1493; /* Pink border */
+    border-radius: 12px; /* Rounded corners for message box */
+    margin-bottom: 25px;
+    color: #e74c3c;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fbeefb; /* Light pink background for the entire page */
+    color: #333;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    padding: 20px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+.box {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px; /* Larger border-radius for a softer look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 0 12px 30px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 450px;
+    position: relative;
+    animation: float 6s ease-in-out infinite; /* Floating animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.form-box header {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f2f2f2;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.form-box form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-box form .input input {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 12px; /* Rounded corners for input fields */
+    border: 1px solid #d1d1d1;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-box form .input input:focus {
+    border-color: #ff1493; /* Pink color when input is focused */
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+}
+
+.btn {
+    height: 45px;
+    background: linear-gradient(135deg, #ff66b2, #ff1493); /* Pink gradient */
+    border: none;
+    border-radius: 12px; /* Rounded corners for buttons */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    padding: 0 25px;
+    animation: buttonPulse 2s infinite; /* Pulse animation */
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #e55e8f, #d2336a); /* Darker pink on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit {
+    width: 100%;
+}
+
+.links {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.links a {
+    color: #ff1493; /* Pink color for links */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #e55e8f;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 60px;
+    padding: 0 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff1493; /* Pink color for the logo */
+}
+
+.logo a {
+    text-decoration: none;
+    color: #ff1493;
+}
+
+.right-links a {
+    padding: 0 20px;
+    color: #ff1493; /* Pink color for nav links */
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.right-links a:hover {
+    color: #e55e8f; /* Darker pink on hover */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.main-box .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bottom {
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 840px) {
+    .main-box .top {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .top .box {
+        margin: 10px 0;
+    }
+
+    .bottom {
+        margin-top: 30px;
+    }
+}
+
+.message {
+    text-align: center;
+    background: #ffeef0; /* Light pink background for messages */
+    padding: 25px;
+    border: 1px solid #ff1493; /* Pink border */
+    border-radius: 12px; /* Rounded corners for message box */
+    margin-bottom: 25px;
+    color: #e74c3c;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fbeefb; /* Light pink background for the entire page */
+    color: #333;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    padding: 20px;
+    position: relative;
+    animation: slideIn 1s ease-out;
+}
+
+.box {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px; /* Larger border-radius for a softer look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 0 12px 30px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 450px;
+    position: relative;
+    animation: float 6s ease-in-out infinite; /* Floating animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.form-box header {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f2f2f2;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.form-box form .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-box form .input input {
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    padding: 0 20px;
+    border-radius: 12px; /* Rounded corners for input fields */
+    border: 1px solid #d1d1d1;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-box form .input input:focus {
+    border-color: #ff1493; /* Pink color when input is focused */
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+}
+
+.btn {
+    height: 45px;
+    background: linear-gradient(135deg, #ff66b2, #ff1493); /* Pink gradient */
+    border: none;
+    border-radius: 12px; /* Rounded corners for buttons */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    padding: 0 25px;
+    animation: buttonPulse 2s infinite; /* Pulse animation */
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #e55e8f, #d2336a); /* Darker pink on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit {
+    width: 100%;
+}
+
+.links {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.links a {
+    color: #ff1493; /* Pink color for links */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: #e55e8f;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 60px;
+    padding: 0 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff1493; /* Pink color for the logo */
+}
+
+.logo a {
+    text-decoration: none;
+    color: #ff1493;
+}
+
+.right-links a {
+    padding: 0 20px;
+    color: #ff1493; /* Pink color for nav links */
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.right-links a:hover {
+    color: #e55e8f; /* Darker pink on hover */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.main-box .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bottom {
+    width: 100%;
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 840px) {
+    .main-box .top {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .top .box {
+        margin: 10px 0;
+    }
+
+    .bottom {
+        margin-top: 30px;
+    }
+}
+
+.message {
+    text-align: center;
+    background: #ffeef0; /* Light pink background for messages */
+    padding: 25px;
+    border: 1px solid #ff1493; /* Pink border */
+    border-radius: 12px; /* Rounded corners for message box */
+    margin-bottom: 25px;
+    color: #e74c3c;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
