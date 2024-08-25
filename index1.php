@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- Custom CSS File Link -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style1.css">
 
    <!-- Custom JS File Link -->
    <script src="js/script.js" defer></script>
@@ -19,6 +19,8 @@
 </head>
 
 <body>
+
+   <a href="index.html" class="button"><h1>Back</h1></a>
 
    <div class="container">
 
@@ -29,36 +31,42 @@
          <div class="product" data-name="p-1">
             <img src="images/sm14.jpeg" alt="Samsung Galaxy M14 5G">
             <h3>Samsung Galaxy M14 5G</h3>
+            <p><h2>Spesifikasi: Layar 6.6", RAM 4GB, Baterai 5000mAh, Kamera 50MP.</h2></p>
             <div class="price">Rp.3.300.000,-</div>
          </div>
 
          <div class="product" data-name="p-2">
             <img src="images/sz.jpeg" alt="Samsung Galaxy Z Fold 5G">
             <h3>Samsung Galaxy Z Fold 5G</h3>
+            <p><h2>Spesifikasi: Layar Lipat 7.6", RAM 12GB, Baterai 4400mAh, Kamera 12MP.</h2></p>
             <div class="price">Rp.25.000.000,-</div>
          </div>
 
          <div class="product" data-name="p-3">
             <img src="images/r122.jpg" alt="Xiaomi Redmi 12">
             <h3>Xiaomi Redmi 12</h3>
+            <p><h2>Spesifikasi: Layar 6.5", RAM 4GB, Baterai 5000mAh, Kamera 50MP.</h2></p>
             <div class="price">Rp.2.140.000,-</div>
          </div>
 
          <div class="product" data-name="p-4">
             <img src="images/r13.jpg" alt="Xiaomi Redmi Note 13 5G">
             <h3>Xiaomi Redmi Note 13 5G</h3>
+            <p><h2>Spesifikasi: Layar 6.7", RAM 6GB, Baterai 5000mAh, Kamera 108MP.</h2></p>
             <div class="price">Rp.2.800.000,-</div>
          </div>
 
          <div class="product" data-name="p-5">
             <img src="images/reno.jpeg" alt="Oppo Reno11 5G">
             <h3>Oppo Reno11 5G</h3>
+            <p><h2>Spesifikasi: Layar 6.4", RAM 8GB, Baterai 4500mAh, Kamera 50MP.</h2></p>
             <div class="price">Rp.5.600.000,-</div>
          </div>
 
          <div class="product" data-name="p-6">
             <img src="images/oppon2.jpeg" alt="Oppo Find N2 5G">
             <h3>Oppo Find N2 5G</h3>
+            <p><h2>Spesifikasi: Layar 7.1", RAM 12GB, Baterai 4520mAh, Kamera 50MP.</h2></p>
             <div class="price">Rp.14.500.000,-</div>
          </div>
 
@@ -160,6 +168,16 @@
 
    </div>
 
-</body>
-
-</html
+   <script>
+      document.querySelectorAll('.product').forEach(product => {
+         product.addEventListener('click', () => {
+            document.querySelector('.products-preview').style.display = 'block';
+            const target = product.getAttribute('data-name');
+            document.querySelectorAll('.preview').forEach(preview => {
+               if (preview.getAttribute('data-target') === target) {
+                  preview.classList.add('active');
+               } else {
+                  preview.classList.remove('active');
+               }
+            });
+         });
