@@ -93,7 +93,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <a href="halaman-berikutnya.html" class="button">Pergi ke Halaman Berikutnya</a>
+    <a href="wishlist.php" class="button">Pergi ke Halaman Berikutnya</a>
 </body>
 
 </html>
